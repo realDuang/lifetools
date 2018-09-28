@@ -1,0 +1,63 @@
+<!-- index.wxml -->
+<view class="container">
+  <Row class="userInfo">
+    <button wx:if="{{!hasUserInfo && canIUse}}" open-type="getUserInfo" bindgetuserinfo="getUserInfo">
+      获取头像昵称
+    </button>
+    <block wx:else>
+      <Col span="3">
+        <!-- <open-data type="userAvatarUrl" bindtap="bindViewTap" class="userinfo-avatar" mode="aspectFit"></open-data> -->
+        <image bindtap="bindViewTap" class="userinfo-avatar" src="{{userInfo.avatarUrl}}" mode="aspectFit"></image>
+      </Col>
+      <Col span="21">
+        <!-- <open-data type="userNickName" class="userinfo-nickname"></open-data> -->
+        <text class="userinfo-nickname">{{userInfo.nickName}}</text>
+      </Col>
+    </block>
+  </Row>
+  <Row class="flex-row today">
+    <Row class="flex-row">
+      <p style="font-size: 120rpx">{{now.temperature}}℃</p>
+    </Row>
+    <Row class="flex-row">
+      <image src="{{now.weatherPic}}" mode="aspectFill" class="now-img" />
+    </Row>
+    <Row class="flex-row">
+      <p style="font-size: 30rpx">{{now.weatherTxt}}</p>
+    </Row>
+    <Row>
+      <Col span="12" style="font-size: 20rpx; text-align: center;">
+        {{now.windDir}} {{now.windLevel}}级
+      </Col>
+      <Col span="12" style="font-size: 20rpx; text-align: center;">湿度{{now.humidity}}%</Col>
+    </Row>
+    <Row class="flex-row">
+      <p style="font-size: 30rpx">{{ city }}市 {{area}}区</p>
+    </Row>
+    <!-- <Row class="flex-row">
+      <p style="font-size: 20rpx">{{now.dateTime}}</p>
+    </Row> -->
+  </Row>
+  <Row gutter="10" class="forecast">
+    <Col span="8" wx:for="{{forecast}}" wx:key="item{{index}}">
+      <view class="forecastItem">
+        <Row class="flex-row">
+          <p style="font-size: 30rpx">{{item.forecastDate}}</p>
+        </Row>
+        <Row class="flex-row">
+          <image src="{{item.forecastPic}}" mode="aspectFit" class="forecast-img" />
+          <p style="font-size: 30rpx;">{{ item.forecastTmp }}</p>
+        </Row>
+        <Row class="flex-row">
+          <p style="font-size: 30rpx;">{{item.forecastTxt}}</p>
+        </Row>
+      </view>
+    </Col>
+  </Row>
+  <view class="weui-footer weui-footer_fixed-bottom">
+    <p class="weui-footer__links">
+      <a href="https://www.kelekexiao.cn" class="weui-footer__link">synccheng</a>
+    </p>
+    <p class="weui-footer__text">Copyright &copy; 2016-2018 kelekexiao.cn</p>
+  </view>
+</view>
