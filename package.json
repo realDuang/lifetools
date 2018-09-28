@@ -1,0 +1,24 @@
+{
+  "name": "lifetools",
+  "version": "0.1.0",
+  "description": "生活常用功能必备小程序~",
+  "main": "app.js",
+  "dependencies": {
+    "moment": "^2.22.2",
+    "vant-weapp": "^0.3.3"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kelekexiao123/lifetools.git"
+  },
+  "author": "kelekexiao123",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/kelekexiao123/lifetools/issues"
+  },
+  "homepage": "https://github.com/kelekexiao123/lifetools#readme"
+}
